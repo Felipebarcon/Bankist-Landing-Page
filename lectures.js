@@ -1,3 +1,5 @@
+/*
+
 // SELECTING CREATING DELETING ELEMENTS
 console.log("--------------SELECTING CREATING DELETING ELEMENTS--------------");
 
@@ -88,3 +90,5 @@ logo.classList.contains("c");
 
 // Don't use override all the classes and allows to only add one class
 logo.className = "felipe";
+
+*/
