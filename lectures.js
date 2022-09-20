@@ -1,5 +1,3 @@
-/*
-
 // SELECTING CREATING DELETING ELEMENTS
 console.log("--------------SELECTING CREATING DELETING ELEMENTS--------------");
 
@@ -91,4 +89,20 @@ logo.classList.contains("c");
 // Don't use override all the classes and allows to only add one class
 logo.className = "felipe";
 
-*/
+// EVENTS LISTENERS
+console.log("--------------EVENTS LISTENER--------------");
+
+const h1 = document.querySelector("h1");
+
+const alertH1 = function (e) {
+  alert("addEventListener: Great your are reading the heading!");
+};
+
+h1.addEventListener("mouseenter", alertH1);
+
+setTimeout(() => h1.removeEventListener("mouseenter", alertH1), 3000);
+
+// Old Way
+/*h1.onmouseover = function (e) {
+  alert("addEventListener: Great your are reading the heading!");
+};*/
