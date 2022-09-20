@@ -1,3 +1,4 @@
+/*
 // SELECTING CREATING DELETING ELEMENTS
 console.log("--------------SELECTING CREATING DELETING ELEMENTS--------------");
 
@@ -38,8 +39,9 @@ document
   .addEventListener("click", function () {
     message.remove();
     // Old Way => message.parentElement.removeChild(message);
-  });
+  });*/
 
+/*
 // STYLES AND ATTRIBUTES AND CLASSES
 console.log("--------------STYLES AND ATTRIBUTES AND CLASSES--------------");
 // STYLES
@@ -87,7 +89,9 @@ logo.classList.toggle("c");
 logo.classList.contains("c");
 
 // Don't use override all the classes and allows to only add one class
-logo.className = "felipe";
+logo.className = "felipe";*/
+
+/*
 
 // EVENTS LISTENERS
 console.log("--------------EVENTS LISTENER--------------");
@@ -103,6 +107,41 @@ h1.addEventListener("mouseenter", alertH1);
 setTimeout(() => h1.removeEventListener("mouseenter", alertH1), 3000);
 
 // Old Way
-/*h1.onmouseover = function (e) {
+h1.onmouseover = function (e) {
   alert("addEventListener: Great your are reading the heading!");
-};*/
+};
+*/
+
+// EVENTS BUBBLING
+console.log("--------------EVENTS BUBBLING--------------");
+
+// Random color rgb(255,255,255)
+
+const randomInt = (min, max) =>
+  Math.floor(Math.random() * (max - min + 1) + min);
+
+const randomColor = () =>
+  `rgb(${randomInt(0, 255)},${randomInt(0, 255)},${randomInt(0, 255)})`;
+
+document.querySelector(".nav__link").addEventListener("click", function (e) {
+  this.style.backgroundColor = randomColor();
+  console.log("LINK", e.target, e.currentTarget);
+  console.log(e.currentTarget === this);
+
+  // Stop propagation
+  // e.stopPropagation();
+});
+
+document.querySelector(".nav__links").addEventListener("click", function (e) {
+  this.style.backgroundColor = randomColor();
+  console.log("CONTAINER", e.target, e.currentTarget);
+});
+
+document.querySelector(".nav").addEventListener(
+  "click",
+  function (e) {
+    this.style.backgroundColor = randomColor();
+    console.log("NAV", e.target, e.currentTarget);
+  },
+  false
+);
