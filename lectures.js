@@ -111,7 +111,7 @@ h1.onmouseover = function (e) {
   alert("addEventListener: Great your are reading the heading!");
 };
 */
-
+/*
 // EVENTS BUBBLING
 console.log("--------------EVENTS BUBBLING--------------");
 
@@ -144,4 +144,4 @@ document.querySelector(".nav").addEventListener(
     console.log("NAV", e.target, e.currentTarget);
   },
   false
-);
+);*/
