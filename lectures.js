@@ -152,6 +152,7 @@ document.querySelector(".nav").addEventListener(
 );
 */
 
+/*
 ///////////////////////////////////////////////////////////
 // DOM TRAVERSING
 console.log("--------------EVENTS BUBBLING--------------");
@@ -184,3 +185,4 @@ console.log(h1.parentElement.children);
 [...h1.parentElement.children].forEach(function (el) {
   if (el !== h1) el.style.transform = "scale(0.5)";
 });
+*/
