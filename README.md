@@ -4,7 +4,7 @@ This is the Landing Page for the Bankist application
 
 ## Live site
 
-- still under construction
+- https://bank-app-landing-page.netlify.app/
 
 ## Tech Stack
 
