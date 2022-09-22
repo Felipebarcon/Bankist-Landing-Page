@@ -12,6 +12,7 @@ const tabsContent = document.querySelectorAll(".operations__content");
 const nav = document.querySelector(".nav");
 const header = document.querySelector(".header");
 const allSections = document.querySelectorAll(".section");
+const imgTargets = document.querySelectorAll("img[data-src]");
 
 ///////////////////////////////////////
 // Modal window
@@ -58,7 +59,7 @@ btnScrollTo.addEventListener("click", function (e) {
     });*/
 
   // New way work on new browsers
-  section1.scrollIntoView({ behavior: "smooth" });
+  section1.scrollIntoView({behavior: "smooth"});
 });
 
 ///////////////////////////////////////////////////////////
@@ -84,7 +85,7 @@ document.querySelector(".nav__links").addEventListener("click", function (e) {
   // Matching strategy
   if (e.target.classList.contains("nav__link")) {
     const id = e.target.getAttribute("href");
-    document.querySelector(id).scrollIntoView({ behavior: "smooth" });
+    document.querySelector(id).scrollIntoView({behavior: "smooth"});
   }
 });
 
@@ -178,3 +179,28 @@ allSections.forEach(function (section) {
   sectionObserver.observe(section);
   section.classList.add("section--hidden");
 });
+
+///////////////////////////////////////////////////////////
+// LAZY LOADING IMAGES
+
+const loadImg = function (entries, observer) {
+  const [entry] = entries;
+
+  if (!entry.isIntersecting) return;
+
+  // Replace src with data-src
+  entry.target.src = entry.target.dataset.src;
+
+  entry.target.addEventListener('load', function () {
+    entry.target.classList.remove('lazy-img')
+  })
+
+  observer.unobserve(entry.target)
+};
+
+const imgObserver = new IntersectionObserver(loadImg, {
+  root: null,
+  threshold: 0,
+});
+
+imgTargets.forEach((img) => imgObserver.observe(img));
