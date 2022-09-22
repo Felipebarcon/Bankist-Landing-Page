@@ -13,6 +13,13 @@ This is the Landing Page for the Bankist application
 - JavaScript
 - Dom Manipulation
 
+## Features
+
+- Scrolling animation
+- Image Lazy Loading
+- Slider Component
+- Sticky NavBar
+
 ## Authors
 
 - [@Felipebarcon](https://www.github.com/Felipebarcon)
