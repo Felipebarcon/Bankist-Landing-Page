@@ -23,3 +23,4 @@ This is the Landing Page for the Bankist application
 ## Authors
 
 - [@Felipebarcon](https://www.github.com/Felipebarcon)
+- License Jonas Schmedtmann Udemy JavaScrip Course
