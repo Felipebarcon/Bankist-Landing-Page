@@ -126,3 +126,12 @@ const handleHover = function (e) {
 // Passing 'argument' into handler
 nav.addEventListener("mouseover", handleHover.bind(0.5));
 nav.addEventListener("mouseout", handleHover.bind(1));
+
+///////////////////////////////////////////////////////////
+// STICKY NAV BAR
+const initialCoords = section1.getBoundingClientRect();
+
+window.addEventListener("scroll", function () {
+  if (window.scrollY > initialCoords) nav.classList.add("sticky");
+  else nav.classList.remove("sticky");
+});
